@@ -1,0 +1,167 @@
+/* Fullscreen trailer background */
+.movie-detail-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Video background */
+.trailer-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.trailer-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.85));
+  z-index: 2;
+}
+
+/* Back Button */
+.top-left-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+}
+
+.back-btn {
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Bottom Details */
+.bottom-details {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  text-align: center;
+  max-width: 90%;
+  padding: 0 20px;
+}
+
+.bottom-details h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.bottom-details .subtitle {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 0.3rem;
+}
+
+.bottom-details .studio {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #aaa;
+}
+
+.tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tags span {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Buttons Section */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.watch-btn {
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #00f2fe);
+  background-size: 600% 600%;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  animation: gradientShift 5s ease infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.watch-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bottom-details h1 {
+    font-size: 2rem;
+  }
+
+  .watch-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .tags span {
+    font-size: 0.8rem;
+  }
+
+  .bottom-details {
+    bottom: 20px;
+  }
+}
+.embed-player {
+  margin-top: 20px;
+  z-index: 3;
+}
