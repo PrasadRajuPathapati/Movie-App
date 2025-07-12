@@ -19,7 +19,7 @@ function App() {
         poster: process.env.PUBLIC_URL + '/posters/kubera6.jpg',
         trailerUrl:
           'https://res.cloudinary.com/duuedv9aa/video/upload/v1752240263/Kuberaa_Official_Trailer_Telugu___Nagarjuna___Dhanush___Rashmika_Mandanna___Sekhar_Kammula___DSP_oivfml.mp4',
-        movieUrl: 'https://drive.google.com/file/d/1DNjnP9EmGcY7QdhLVVyE81zAwjHjlePZ/preview',
+        movieUrl: 'https://archive.org/download/video_20250703_162418/video_20250703_162418.ia.mp4',
       },
       {
         id: 2,

@@ -1,42 +1,43 @@
-/* Fullscreen trailer background */
 .movie-detail-page {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  background-color: black;
   color: white;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Video background */
-.trailer-video {
-  position: absolute;
-  top: 0;
-  left: 0;
+.top-trailer-section {
+  position: relative;
   width: 100%;
-  height: 100%;
-  z-index: 1;
+  height: 60vh;
   overflow: hidden;
 }
 
-.trailer-video video {
+.trailer-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.trailer-container video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Dark overlay */
-.overlay {
+/* Faded bottom effect using pure CSS */
+.fade-overlay-bottom {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.85));
+  height: 140px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
   z-index: 2;
+  pointer-events: none;
 }
 
-/* Back Button */
 .top-left-button {
   position: absolute;
   top: 20px;
@@ -61,59 +62,20 @@
   color: #000;
 }
 
-/* Bottom Details */
 .bottom-details {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   z-index: 3;
+  padding: 2rem;
   text-align: center;
-  max-width: 90%;
-  padding: 0 20px;
 }
 
-.bottom-details h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.bottom-details .subtitle {
-  font-size: 1.1rem;
-  color: #ccc;
-  margin-bottom: 0.3rem;
-}
-
-.bottom-details .studio {
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
-  color: #aaa;
-}
-
-.tags {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.tags span {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-}
-
-/* Buttons Section */
 .hero-buttons {
-  display: flex;
-  justify-content: center;
+  margin-top: 1rem;
 }
 
 .watch-btn {
-  background: linear-gradient(270deg, #ff6ec4, #7873f5, #00f2fe);
-  background-size: 600% 600%;
+  background: linear-gradient(135deg, #00f260, #0575e6);
+  background-size: 200% auto;
   padding: 12px 28px;
   border: none;
   border-radius: 8px;
@@ -121,28 +83,15 @@
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  animation: gradientShift 5s ease infinite;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s, background-position 0.4s ease-in-out;
 }
 
 .watch-btn:hover {
-  transform: scale(1.1);
+  background-position: right center;
+  transform: scale(1.05);
 }
 
-/* Animation */
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Responsive */
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .bottom-details h1 {
     font-size: 2rem;
@@ -153,15 +102,7 @@
     font-size: 0.9rem;
   }
 
-  .tags span {
-    font-size: 0.8rem;
+  .fade-overlay-bottom {
+    height: 100px;
   }
-
-  .bottom-details {
-    bottom: 20px;
-  }
-}
-.embed-player {
-  margin-top: 20px;
-  z-index: 3;
 }

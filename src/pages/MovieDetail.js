@@ -17,20 +17,20 @@ const MovieDetail = ({ movies }) => {
 
   return (
     <div className="movie-detail-page">
-      {/* Background Trailer Video */}
-      <div className="trailer-video">
-        <video
-          src={movie.trailerUrl}
-          autoPlay
-          muted
-          loop
-          controls={false}
-          playsInline
-        />
+      {/* Trailer Section */}
+      <div className="top-trailer-section">
+        <div className="trailer-container">
+          <video
+            src={movie.trailerUrl}
+            autoPlay
+            muted
+            loop
+            controls={false}
+            playsInline
+          />
+          <div className="fade-overlay-bottom"></div>
+        </div>
       </div>
-
-      {/* Overlay */}
-      <div className="overlay"></div>
 
       {/* Back Button */}
       <div className="top-left-button">
@@ -39,11 +39,14 @@ const MovieDetail = ({ movies }) => {
         </button>
       </div>
 
-      {/* Bottom Details */}
+      {/* Movie Info Section */}
       <div className="bottom-details">
         <h1>{movie.title}</h1>
         <div className="hero-buttons">
-          <button className="watch-btn" onClick={() => navigate(`/watch/${movie.id}`)}>
+          <button
+            className="watch-btn"
+            onClick={() => navigate(`/watch/${movie.id}`)}
+          >
             ▶ Watch Movie
           </button>
         </div>

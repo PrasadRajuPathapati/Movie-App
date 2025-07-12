@@ -1,3 +1,4 @@
+// src/pages/WatchMovie.js
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './WatchMovie.css';
@@ -5,25 +6,24 @@ import './WatchMovie.css';
 const WatchMovie = ({ movies }) => {
   const { id } = useParams();
   const navigate = useNavigate();
-
   const movie = movies.find((m) => m.id === parseInt(id));
 
-  if (!movie) return <p>Movie not found.</p>;
+  if (!movie) return <p style={{ color: 'white', textAlign: 'center' }}>Movie not found.</p>;
 
   return (
-    <div className="watch-movie-page">
-      <button className="back-btn" onClick={() => navigate(-1)}>⬅ Back</button>
+    <div className="watch-container">
+      <header className="watch-header">
+        <button className="back-btn" onClick={() => navigate(-1)}>⬅ Back</button>
+        <h1>{movie.title}</h1>
+      </header>
 
-      <div className="video-container">
-        <iframe
+      <div className="video-wrapper">
+        <video
           src={movie.movieUrl}
-          width="100%"
-          height="100%"
-          frameBorder="0"
-          allow="autoplay; fullscreen"
-          allowFullScreen
-          title={movie.title}
-        ></iframe>
+          controls
+          autoPlay
+          className="watch-video"
+        />
       </div>
     </div>
   );
