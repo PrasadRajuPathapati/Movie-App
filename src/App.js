@@ -48,7 +48,6 @@ function App() {
               <nav>
                 <a href="/">Home</a>
                 <a href="#movies">Movies</a>
-                <a href="/explore">Explore Archive</a>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
               </nav>
@@ -84,13 +83,8 @@ function App() {
       {/* Watch Page */}
       <Route path="/watch/:id" element={<WatchMovie movies={movies} />} />
 
-      {/* Internet Archive Page */}
-      <Route path="/explore" element={<IAExplorer />} />
     </Routes>
   );
 }
 
 export default App;
-// Just added a test comment to trigger Vercel rebuild
-// Just added a test comment to trigger Vercel rebuild
-// Just added a test comment to trigger Vercel rebuild
