@@ -1,12 +1,13 @@
+/* Main Container */
 .movie-detail-page {
-  background-color: black;
-  color: white;
+  background-color: #000;
+  color: #fff;
   min-height: 100vh;
-  position: relative;
-  overflow: hidden;
   font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
 }
 
+/* Trailer section */
 .top-trailer-section {
   position: relative;
   width: 100%;
@@ -14,6 +15,7 @@
   overflow: hidden;
 }
 
+/* Trailer video */
 .trailer-container {
   position: relative;
   width: 100%;
@@ -26,18 +28,17 @@
   object-fit: cover;
 }
 
-/* Faded bottom effect using pure CSS */
+/* Dark fade from bottom of trailer */
 .fade-overlay-bottom {
   position: absolute;
   bottom: 0;
-  left: 0;
   width: 100%;
-  height: 140px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+  height: 30%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0));
   z-index: 2;
-  pointer-events: none;
 }
 
+/* Back Button */
 .top-left-button {
   position: absolute;
   top: 20px;
@@ -47,14 +48,13 @@
 
 .back-btn {
   padding: 8px 16px;
-  font-size: 0.95rem;
   background: transparent;
   color: #fff;
   border: 2px solid #fff;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .back-btn:hover {
@@ -62,20 +62,26 @@
   color: #000;
 }
 
+/* Movie info section */
 .bottom-details {
   position: relative;
   z-index: 3;
-  padding: 2rem;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
+.bottom-details h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
 .hero-buttons {
-  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .watch-btn {
   background: linear-gradient(135deg, #00f260, #0575e6);
-  background-size: 200% auto;
   padding: 12px 28px;
   border: none;
   border-radius: 8px;
@@ -87,22 +93,29 @@
 }
 
 .watch-btn:hover {
-  background-position: right center;
   transform: scale(1.05);
 }
 
-/* Mobile Responsive */
+/* 📱 Mobile Responsive */
 @media (max-width: 768px) {
+  .top-trailer-section {
+    height: 35vh;
+  }
+
   .bottom-details h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   .watch-btn {
     padding: 10px 20px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .fade-overlay-bottom {
-    height: 100px;
+    height: 40%;
   }
+}
+.trailer-container video {
+  object-fit: contain; /* Instead of 'cover' */
+  background: #000;
 }
