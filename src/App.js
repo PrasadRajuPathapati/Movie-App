@@ -16,7 +16,7 @@ function App() {
         id: 1,
         title: 'Kuberaa',
         rating: 'N/A',
-        poster: process.env.PUBLIC_URL + '/posters/kubera6.jpg',
+        poster: process.env.PUBLIC_URL + '/posters/kubera6.webp',
         trailerUrl:
           'https://res.cloudinary.com/duuedv9aa/video/upload/v1752240263/Kuberaa_Official_Trailer_Telugu___Nagarjuna___Dhanush___Rashmika_Mandanna___Sekhar_Kammula___DSP_oivfml.mp4',
         movieUrl: 'https://archive.org/download/video_20250703_162418/video_20250703_162418.ia.mp4',
@@ -25,7 +25,7 @@ function App() {
         id: 2,
         title: 'Karate Kid Legends',
         rating: '8.2',
-        poster: process.env.PUBLIC_URL + '/posters/karate_kid_legends.jpg',
+        poster: process.env.PUBLIC_URL + '/posters/karate_kid_legends.webp',
         trailerUrl:
           'https://res.cloudinary.com/duuedv9aa/video/upload/v1752241799/KARATE_KID__LEGENDS_-_Official_Telugu_Trailer___Releasing_Exclusively_In_Cinemas_May_30_2025_b2l9vq.mp4',
         movieUrl: 'https://example.com/watch-karate-kid-legends',
@@ -34,7 +34,7 @@ function App() {
     setMovies(sampleMovies);
   }, []);
 
-  const HERO_IMAGE = process.env.PUBLIC_URL + '/posters/image_bg.jpg';
+  const HERO_IMAGE = process.env.PUBLIC_URL + '/posters/hero.webp';
 
   return (
     <Routes>
